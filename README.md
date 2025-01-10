@@ -1,4 +1,4 @@
-## 🌟 My Personal LeetCode
+## 🌟 My Personal LeetCode Solutions
 
 - This repository is a collection of my personal LeetCode solutions.
 - I will try to solve as many problems as possible and keep updating this repository.
