@@ -11,3 +11,4 @@
 - [9. Palindrome Number](/9.%20Palindrome%20Number)
 - [13. Roman to Integer](/13.%20Roman%20to%20Integer)
 - [14. Longest Common Prefix](/14.%20Longest%20Common%20Prefix)
+- [20. Valid Parentheses](/20.%20Valid%20Parentheses)
