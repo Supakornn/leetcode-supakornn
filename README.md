@@ -15,3 +15,4 @@
 - [21. Merge Two Sorted Lists](/21.%20Merge%20Two%20Sorted%20Lists)
 - [26. Remove Duplicates from Sorted Array](/26.%20Remove%20Duplicates%20from%20Sorted%20Array)
 - [27. Remove Element](/27.%20Remove%20Element)
+- [28. Find the Index of the First Occurrence in a String](</28.%20Implement%20strStr()>)
