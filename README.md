@@ -12,3 +12,4 @@
 - [13. Roman to Integer](/13.%20Roman%20to%20Integer)
 - [14. Longest Common Prefix](/14.%20Longest%20Common%20Prefix)
 - [20. Valid Parentheses](/20.%20Valid%20Parentheses)
+- [21. Merge Two Sorted Lists](/21.%20Merge%20Two%20Sorted%20Lists)
