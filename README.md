@@ -18,3 +18,4 @@
 - [28. Find the Index of the First Occurrence in a String](/28.%20Find%20the%20Index%20of%20the%20First%20Occurrence%20in%20a%20String)
 - [35. Search Insert Position](/35.%20Search%20Insert%20Position)
 - [58. Length of Last Word](/58.%20Length%20of%20Last%20Word)
+- [66. Plus One](/66.%20Plus%20One/main.go)
