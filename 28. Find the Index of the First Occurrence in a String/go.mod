@@ -1,3 +1,3 @@
-module github.com/supakorn/leetcode-supakornn
+module github.com/supakornn/leetcode-supakornn
 
 go 1.23.3
