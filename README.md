@@ -9,6 +9,7 @@
 
 - [1. Two Sum](/1.%20Two%20Sum/main.go)
 - [3. Longest Substring Without Repeating Characters](/3.%20Longest%20Substring%20Without%20Repeating%20Characters/main.go)
+- [4. Median of Two Sorted Arrays](/4.%20Median%20of%20Two%20Sorted%20Arrays/main.go)
 - [9. Palindrome Number](/9.%20Palindrome%20Number/main.go)
 - [13. Roman to Integer](/13.%20Roman%20to%20Integer/main.go)
 - [14. Longest Common Prefix](/14.%20Longest%20Common%20Prefix/main.go)
