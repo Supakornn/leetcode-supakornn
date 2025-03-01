@@ -2,28 +2,45 @@ import unittest
 import os
 import shutil
 from update_readme import update_readme
-from sort_readme import sort_toc
 
 class TestReadmeUpdate(unittest.TestCase):
     def setUp(self):
         os.makedirs("22. Add Binary", exist_ok=True)
         os.makedirs("68. Text Justification", exist_ok=True)
         
-        with open("README.md", "w") as f:
-            f.write("""# LeetCode Solutions\n\n### 📚 Table of Contents\n\n- [1. Two Sum](/1. Two Sum/main.go)\n""")
+        self.test_content = """## 🌟 My Personal LeetCode Solutions
+
+- This repository is a collection of my personal LeetCode solutions.
+- I will try to solve as many problems as possible and keep updating this repository.
+
+<!-- Start  -->
+
+### 📚 Table of Contents
+
+- [1. Two Sum](./1.%20Two%20Sum/main.go)
+
+<!-- End  -->"""
+
+        with open("TEST_README.md", "w") as f:
+            f.write(self.test_content)
 
     def tearDown(self):
-        shutil.rmtree("67. Add Binary", ignore_errors=True)
+        os.remove("TEST_README.md")
+        shutil.rmtree("22. Add Binary", ignore_errors=True)
         shutil.rmtree("68. Text Justification", ignore_errors=True)
         
     def test_update_readme(self):
-        update_readme()
+        from update_readme import update_readme
+        update_readme("TEST_README.md")
         
-        with open("README.md", "r") as f:
+        with open("TEST_README.md", "r") as f:
             content = f.read()
             
+        self.assertIn("<!-- Start  -->", content)
+        self.assertIn("<!-- End  -->", content)
         self.assertIn("22. Add Binary", content)
         self.assertIn("68. Text Justification", content)
+        self.assertIn("## 🌟 My Personal LeetCode Solutions", content)
 
 if __name__ == "__main__":
     unittest.main()

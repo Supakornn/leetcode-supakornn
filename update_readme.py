@@ -3,38 +3,60 @@ import re
 from sort_readme import sort_toc
 
 def get_problem_folders():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(script_dir)
+    
     folders = []
     for item in os.listdir('.'):
         if os.path.isdir(item) and re.match(r'^\d+\.', item):
             folders.append(item)
     return folders
 
-def update_readme():
+def update_readme(readme_path=None):
+    if readme_path is None:
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        readme_path = os.path.join(script_dir, 'README.md')
+    
+    print(f"Current working directory: {os.getcwd()}")
+    print(f"Looking for README at: {readme_path}")
+    
+    if not os.path.exists(readme_path):
+        print(f"Error: {readme_path} not found!")
+        return
+        
     try:
-        with open('README.md', 'r') as f:
+        with open(readme_path, 'r') as f:
             content = f.read()
     except FileNotFoundError:
-        content = """# LeetCode Solutions\n\n## 🌟 My Personal LeetCode Solutions\n\n- This repository is a collection of my personal LeetCode solutions.\n\n### 📚 Table of Contents\n\n"""
+        print(f"Error: Could not read {readme_path}")
+        return
+
+    parts = content.split('<!-- Start  -->')
+    if len(parts) < 2:
+        return
+    
+    before_content = parts[0] + '<!-- Start  -->\n\n'
+    middle_parts = parts[1].split('<!-- End  -->')
+    after_content = '\n<!-- End  -->' + middle_parts[1] if len(middle_parts) > 1 else '\n<!-- End  -->'
 
     folders = get_problem_folders()
     entries = []
     for folder in folders:
-        entries.append(f"- [{folder}](/{folder}/main.go)")
-    
-    toc_pattern = re.compile(r'(### 📚 Table of Contents\n\n)((?:- \[.+?\]\(.+?\)\n)*)', re.MULTILINE)
-    toc_match = toc_pattern.search(content)
-    
-    if toc_match:
-        new_content = content[:toc_match.start(2)] + '\n'.join(entries) + '\n'
-        if toc_match.end(2) < len(content):
-            new_content += content[toc_match.end(2):]
-    else:
-        new_content = content + '\n'.join(entries) + '\n'
+        encoded_path = folder.replace(' ', '%20')
+        entries.append(f"- [{folder}](./{encoded_path}/main.go)")
 
-    with open('README.md', 'w') as f:
-        f.write(new_content)
+    sorted_entries = sorted(entries, key=lambda x: int(re.search(r'\[(\d+)\.', x).group(1)))
     
-    sort_toc('README.md')
+    new_content = (
+        before_content +
+        "### 📚 Table of Contents\n\n" +
+        '\n'.join(sorted_entries) +
+        '\n' +
+        after_content
+    )
+
+    with open(readme_path, 'w') as f:
+        f.write(new_content)
 
 if __name__ == "__main__":
     update_readme()

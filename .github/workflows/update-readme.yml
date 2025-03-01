@@ -20,7 +20,9 @@ jobs:
 
       - name: Update README
         run: |
-          python sort_readme.py
+          echo "Current directory content:"
+          ls -la
+          echo "Running update script..."
           python update_readme.py
 
       - name: Commit and push if changed
