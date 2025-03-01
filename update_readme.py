@@ -12,6 +12,23 @@ def get_problem_folders():
             folders.append(item)
     return folders
 
+def get_solution_file(folder_path):
+    file_priority = [
+        'main.go',
+        'main.rs',
+        'main.py',
+        'main.cpp',
+        'main.java',     
+        'main.js',
+        'main.ts',
+        'main.rb',
+    ]
+    
+    for file in file_priority:
+        if os.path.exists(os.path.join(folder_path, file)):
+            return file
+    return 'main.go'  
+
 def update_readme(readme_path=None):
     if readme_path is None:
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -43,7 +60,8 @@ def update_readme(readme_path=None):
     entries = []
     for folder in folders:
         encoded_path = folder.replace(' ', '%20')
-        entries.append(f"- [{folder}](./{encoded_path}/main.go)")
+        solution_file = get_solution_file(folder)
+        entries.append(f"- [{folder}](./{encoded_path}/{solution_file})")
 
     sorted_entries = sorted(entries, key=lambda x: int(re.search(r'\[(\d+)\.', x).group(1)))
     
