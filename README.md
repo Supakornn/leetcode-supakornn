@@ -2,7 +2,6 @@
 
 - This repository is a collection of my personal LeetCode solutions.
 - I will try to solve as many problems as possible and keep updating this repository.
-
 - maybe I will add some explanations in the future.
 
 ### 📚 Table of Contents
