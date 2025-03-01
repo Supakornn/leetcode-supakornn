@@ -9,8 +9,6 @@
 
 <!-- Start  -->
 
-### 📚 Table of Contents
-
 - [1. Two Sum](./1.%20Two%20Sum/main.go)
 - [3. Longest Substring Without Repeating Characters](./3.%20Longest%20Substring%20Without%20Repeating%20Characters/main.go)
 - [4. Median of Two Sorted Arrays](./4.%20Median%20of%20Two%20Sorted%20Arrays/main.go)
@@ -26,6 +24,5 @@
 - [35. Search Insert Position](./35.%20Search%20Insert%20Position/main.go)
 - [58. Length of Last Word](./58.%20Length%20of%20Last%20Word/main.go)
 - [66. Plus One](./66.%20Plus%20One/main.go)
-- [72. Edit Distance](./72.%20Edit%20Distance/main.java)
 
 <!-- End  -->

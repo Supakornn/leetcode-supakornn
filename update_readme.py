@@ -67,7 +67,6 @@ def update_readme(readme_path=None):
     
     new_content = (
         before_content +
-        "### 📚 Table of Contents\n\n" +
         '\n'.join(sorted_entries) +
         '\n' +
         after_content
