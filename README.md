@@ -5,8 +5,6 @@
 
 - maybe I will add some explanations in the future.
 
-<!-- Start  -->
-
 ### 📚 Table of Contents
 
 <!-- Start  -->
