@@ -38,9 +38,12 @@ class TestReadmeUpdate(unittest.TestCase):
             
         self.assertIn("<!-- Start  -->", content)
         self.assertIn("<!-- End  -->", content)
-        self.assertIn("22. Add Binary", content)
-        self.assertIn("68. Text Justification", content)
         self.assertIn("## 🌟 My Personal LeetCode Solutions", content)
+
+        self.assertIn("- [22. Add Binary](./22.%20Add%20Binary/)", content)
+        self.assertIn("- [68. Text Justification](./68.%20Text%20Justification/)", content)
+
+        self.assertNotIn("main.go", content)
 
 if __name__ == "__main__":
     unittest.main()
