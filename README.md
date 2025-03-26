@@ -14,6 +14,7 @@
 - [4. Median of Two Sorted Arrays](./4.%20Median%20of%20Two%20Sorted%20Arrays/)
 - [5. Longest Palindromic Substring](./5.%20Longest%20Palindromic%20Substring/)
 - [6. Zigzag Conversion](./6.%20Zigzag%20Conversion/)
+- [7. Reverse Integer](./7.%20Reverse%20Integer/)
 - [9. Palindrome Number](./9.%20Palindrome%20Number/)
 - [13. Roman to Integer](./13.%20Roman%20to%20Integer/)
 - [14. Longest Common Prefix](./14.%20Longest%20Common%20Prefix/)
